@@ -1,6 +1,10 @@
-node_env/
-node_modules/
-dist/
-.vscode/
+static/
 
 package-lock.json
+node_env/
+node_modules/
+
+.ipynb_checkpoints/
+
+.vscode/
+

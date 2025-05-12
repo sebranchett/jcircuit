@@ -1,8 +1,8 @@
 {
 	"scripts": {
 		"dev": "npm run build -- --sourcemap=inline --watch",
-		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=dist",
-	    "copy": "cp src/widget.html dist/widget.html && cp -r node_modules/gui-circuit-generator/assets dist/assets",
+		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=static",
+	    "copy": "cp src/widget.html static/widget.html && cp -r node_modules/gui-circuit-generator/assets static/assets",
 		"build": "npm run bundle && npm run copy"
 	},
 	"dependencies": {
