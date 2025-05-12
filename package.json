@@ -1,0 +1,12 @@
+{
+	"scripts": {
+		"dev": "npm run build -- --sourcemap=inline --watch",
+		"build": "esbuild src/script.js --minify --format=esm --bundle --outdir=dist"
+	},
+	"dependencies": {
+    	"gui-circuit-generator": "qucat/gui-circuit-generator#feature/netlist"
+	},
+	"devDependencies": {
+		"esbuild": "^0.24.0"
+	}
+}
