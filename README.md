@@ -25,3 +25,8 @@ Install the npm dependencies with:
 ```bash
 npm install
 ```
+## Build the Javascript module
+You can build the Javascript module with:
+```bash
+npm run build
+```

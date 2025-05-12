@@ -1,7 +1,9 @@
 {
 	"scripts": {
 		"dev": "npm run build -- --sourcemap=inline --watch",
-		"build": "esbuild src/script.js --minify --format=esm --bundle --outdir=dist"
+		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=dist",
+	    "copy": "cp src/widget.html dist/widget.html && cp -r node_modules/gui-circuit-generator/assets dist/assets",
+		"build": "npm run bundle && npm run copy"
 	},
 	"dependencies": {
 		"gui-circuit-generator": "github:qucat/gui-circuit-generator#feature/netlist"
