@@ -4,9 +4,9 @@
 		"build": "esbuild src/script.js --minify --format=esm --bundle --outdir=dist"
 	},
 	"dependencies": {
-    	"gui-circuit-generator": "qucat/gui-circuit-generator#feature/netlist"
+		"gui-circuit-generator": "github:qucat/gui-circuit-generator#feature/netlist"
 	},
 	"devDependencies": {
-		"esbuild": "^0.24.0"
+		"esbuild": "^0.25.4"
 	}
 }

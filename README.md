@@ -10,10 +10,10 @@ Activate the environment with:
 ```bash
 conda activate jcircuit
 ```
-The `jcircuit` environment has npm and nodeenv.
+The `jcircuit` environment has `npm` and `nodeenv`.
 
 ## npm Environment
-You can create a npm environment with:
+You can create an npm environment with:
 ```bash
 nodeenv node_env
 # source node_env/bin/activate  # linux
