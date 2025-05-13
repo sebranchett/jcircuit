@@ -5,6 +5,7 @@ node_env/
 node_modules/
 
 .ipynb_checkpoints/
+__pycache__/
 
 .vscode/
 
