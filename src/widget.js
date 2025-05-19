@@ -43,7 +43,7 @@ function render({ model, el }) {
     console.log('Canvas:', canvas);
 
     // Create and initialize the GUI Adapter
-    const guiAdapter = new GUIAdapter(canvas, circuitService, ElementRegistry, rendererFactory, GUICommandRegistry);
+    const guiAdapter = new GUIAdapter(controlsContainer, canvas, circuitService, ElementRegistry, rendererFactory, GUICommandRegistry);
     guiAdapter.initialize();
 
     // Export button event handler
