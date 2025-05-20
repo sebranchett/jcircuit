@@ -21,13 +21,13 @@ function render({ model, el }) {
     canvas.height = 600;
     canvas.style.border = '1px solid black';
 
-    let controlsContainer = document.createElement("div");
-    controlsContainer.className = "controls";
-    controlsContainer.appendChild(resistorButton);
-    controlsContainer.appendChild(wireButton);
-    controlsContainer.appendChild(exportButton);
+    let controls = document.createElement("div");
+    controls.className = "controls";
+    controls.appendChild(resistorButton);
+    controls.appendChild(wireButton);
+    controls.appendChild(exportButton);
 
-    el.appendChild(controlsContainer);
+    el.appendChild(controls);
     el.appendChild(canvas);
 
     // Set up the circuit and services
@@ -43,7 +43,7 @@ function render({ model, el }) {
     console.log('Canvas:', canvas);
 
     // Create and initialize the GUI Adapter
-    const guiAdapter = new GUIAdapter(controlsContainer, canvas, circuitService, ElementRegistry, rendererFactory, GUICommandRegistry);
+    const guiAdapter = new GUIAdapter(controls, canvas, circuitService, ElementRegistry, rendererFactory, GUICommandRegistry);
     guiAdapter.initialize();
 
     // Export button event handler
