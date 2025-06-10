@@ -30,3 +30,22 @@ You can build the Javascript module with:
 ```bash
 npm run build
 ```
+
+## Get ready to build a Python package and upload to PyPI
+```bash
+python -m pip install --upgrade build
+python -m pip install --upgrade twine
+```
+
+## Build the Python package
+```bash
+python -m build
+```
+## Upload to TestPyPI
+```bash
+python -m twine upload --repository testpypi dist/*
+```
+## Upload to PyPI (production)
+```bash
+python -m twine upload dist/*
+```

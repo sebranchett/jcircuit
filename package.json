@@ -1,8 +1,8 @@
 {
 	"scripts": {
 		"dev": "npm run build -- --sourcemap=inline --watch",
-		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=static --asset-names=assets/[name] --loader:.png=dataurl",
-		"copy": "cp src/widget.html static/widget.html && cp -r node_modules/gui-circuit-generator/assets static/assets",
+		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=jcircuit_sebranchett/static --asset-names=assets/[name] --loader:.png=dataurl",
+		"copy": "cp src/widget.html jcircuit_sebranchett/static/widget.html && cp -r node_modules/gui-circuit-generator/assets jcircuit_sebranchett/static/assets",
 		"build": "npm run bundle && npm run copy"
 	},
 	"dependencies": {

@@ -13,8 +13,8 @@ except importlib.metadata.PackageNotFoundError:
 
 class JCircuitWidget(anywidget.AnyWidget):
 
-    _esm = pathlib.Path(__file__).parent.parent / "static" / "widget.js"
-    # _css = pathlib.Path(__file__).parent.parent / "static" / "gui.css"
+    _esm = pathlib.Path(__file__).parent / "static" / "widget.js"
+    # _css = pathlib.Path(__file__).parent / "static" / "gui.css"
     _css = """
     .controls button { margin-top: 10px; }
     """
