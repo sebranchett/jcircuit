@@ -1,8 +1,13 @@
 import { Circuit } from '../node_modules/gui-circuit-generator/src/domain/aggregates/Circuit.js';
 import { CircuitService } from '../node_modules/gui-circuit-generator/src/application/CircuitService.js';
 import { GUIAdapter } from '../node_modules/gui-circuit-generator/src/gui/adapters/GUIAdapter.js';
-import { ElementRegistry, rendererFactory, GUICommandRegistry  }   from '../node_modules/gui-circuit-generator/src/config/settings.js'; // Assuming ElementRegistry is configured in settings.js
-// import document from 'document'; // Assuming document is a global object
+
+import {
+  ElementRegistry,
+  rendererFactory,
+  GUICommandRegistry,
+  setupCommands
+} from "../node_modules/gui-circuit-generator/src/config/settings.js";
 
 
 function render({ model, el }) {
@@ -34,17 +39,12 @@ function render({ model, el }) {
     const circuit = new Circuit();
     const circuitService = new CircuitService(circuit, ElementRegistry);
 
-
-    console.log('ElementRegistry:', ElementRegistry);
-    console.log('rendererFactory:', rendererFactory);
-    console.log('GUICommandRegistry:', GUICommandRegistry);
-
-    // We already have the canvas created above
-    console.log('Canvas:', canvas);
-
-    // Create and initialize the GUI Adapter
     const guiAdapter = new GUIAdapter(controls, canvas, circuitService, ElementRegistry, rendererFactory, GUICommandRegistry);
-    guiAdapter.initialize();
+
+    // Wait for commands to be set up
+    setupCommands(circuitService, guiAdapter.circuitRenderer).then(() => {
+        guiAdapter.initialize();
+    });
 
     // Export button event handler
     
