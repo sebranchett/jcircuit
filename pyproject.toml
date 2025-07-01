@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jcircuit_sebranchett"
-version = "0.0.5"
+name = "jcircuit"
+version = "0.0.1"
 dependencies = ["anywidget", "jupyterlab"]
 readme = "README.md"
 
@@ -21,11 +21,11 @@ dev = ["watchfiles"]
 
 
 [tool.hatch.build]
-artifacts = ["jcircuit_sebranchett/static/*"]
+artifacts = ["jcircuit/static/*"]
 
 [tool.hatch.build.hooks.jupyter-builder]
 build-function = "hatch_jupyter_builder.npm_builder"
-ensured-targets = ["jcircuit_sebranchett/static/widget.js"]
+ensured-targets = ["jcircuit/static/widget.js"]
 skip-if-exists = ["src/de,p=widget/static/widget.js"]
 dependencies = ["hatch-jupyter-builder>=0.5.0"]
 

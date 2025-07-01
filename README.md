@@ -30,11 +30,15 @@ You can change the QuCAT Circuit Generator version in the `dependencies` section
 
 The JavaScript code is in `src/widget.js`. This has to be kept in sync with `gui-circuit-generator/src/gui/main.js` and just enough of `gui-circuit-generator/src/gui/gui.html`, converted to JavaScript.
 
+ The JavaScript build process creates a `jcircuit/static` directory with the bundled JavaScript code and other static files needed for the widget.
+
 You can change the (Test)PyPI version number in `pyproject.toml`. This file defines the Python package metadata and dependencies.
 
-The Python code is in `jcircuit/__init__.py`. The building process creates a `jcircuit/static` directory with the bundled JavaScript code and other static files needed for the widget.
+The Python code is in `jcircuit/__init__.py`.
 
 The `environment.yml` file defines the conda environment with the necessary dependencies for development.
+
+The Python build process creates a Python package in the `dist` directory, which can be uploaded to TestPyPI or PyPI.
 
 ## Conda Environment
 You can create a conda environment with:
