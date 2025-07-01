@@ -11,26 +11,29 @@ import {
 
 
 function render({ model, el }) {
-    let resistorButton = document.createElement("button");
-    resistorButton.id = "addResistor";
-    resistorButton.textContent = "Add Resistor";
-    let wireButton = document.createElement("button");
-    wireButton.id = "addWire";
-    wireButton.textContent = "Add Wire";
-    let exportButton = document.createElement("button");
-    exportButton.id = "export";
-    exportButton.textContent = "Export circuit";
-    let canvas = document.createElement("canvas");
-    canvas.id = 'circuitCanvas';
+    // Create control buttons using a helper function to reduce repetition
+    function createButton(id, text) {
+        const btn = document.createElement("button");
+        btn.id = id;
+        btn.textContent = text;
+        return btn;
+    }
+
+    const resistorButton = createButton("addResistor", "Add Resistor");
+    const wireButton = createButton("addWire", "Add Wire");
+    const exportButton = createButton("export", "Export circuit");
+
+    // Create and configure the canvas
+    const canvas = document.createElement("canvas");
+    canvas.id = "circuitCanvas";
     canvas.width = 800;
     canvas.height = 600;
-    canvas.style.border = '1px solid black';
+    canvas.style.border = "1px solid black";
 
-    let controls = document.createElement("div");
+    // Create controls container and append buttons
+    const controls = document.createElement("div");
     controls.className = "controls";
-    controls.appendChild(resistorButton);
-    controls.appendChild(wireButton);
-    controls.appendChild(exportButton);
+    controls.append(resistorButton, wireButton, exportButton);
 
     el.appendChild(controls);
     el.appendChild(canvas);
