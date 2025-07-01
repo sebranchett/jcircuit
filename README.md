@@ -40,6 +40,8 @@ The `environment.yml` file defines the conda environment with the necessary depe
 
 The Python build process creates a Python package in the `dist` directory, which can be uploaded to TestPyPI or PyPI.
 
+The script `push_tag.sh` is used to push a tag to GitHub, which then triggers a GitHub Actions workflow to create a GitHub release and to publish the package to TestPyPI or PyPI. Note that tags are GitHub repository specific.
+
 ## Conda Environment
 You can create a conda environment with:
 ```bash
@@ -73,11 +75,18 @@ Build the Python package with:
 ```bash
 python -m build
 ```
-Upload to TestPyPI with:
+Upload to TestPyPI manually with:
 ```bash
 python -m twine upload --repository testpypi dist/*
 ```
-Upload to PyPI (production) with:
+Upload to PyPI (production) manually with:
 ```bash
 python -m twine upload dist/*
+```
+
+## Automated Publishing
+You can use the `push_tag.sh` script to push a tag to GitHub. This will trigger a GitHub Actions workflow to create a GitHub release and to publish to TestPyPI or PyPI.
+```bash
+.push_tag.sh --help  # for more information
+./push_tag.sh [pypi|testpypi]  # default is testpypi
 ```
