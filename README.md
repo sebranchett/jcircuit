@@ -87,6 +87,6 @@ python -m twine upload dist/*
 ## Automated Publishing
 You can use the `push_tag.sh` script to push a tag to GitHub. This will trigger a GitHub Actions workflow to create a GitHub release and to publish to TestPyPI or PyPI.
 ```bash
-.push_tag.sh --help  # for more information
+./push_tag.sh --help  # for more information
 ./push_tag.sh [pypi|testpypi]  # default is testpypi
 ```

@@ -21,6 +21,8 @@ function render({ model, el }) {
 
     const resistorButton = createButton("addResistor", "Add Resistor");
     const wireButton = createButton("addWire", "Add Wire");
+    const undoButton = createButton("undoButton", "<");
+    const redoButton = createButton("redoButton", ">");
     const exportButton = createButton("export", "Export circuit");
 
     // Create and configure the canvas
@@ -33,7 +35,7 @@ function render({ model, el }) {
     // Create controls container and append buttons
     const controls = document.createElement("div");
     controls.className = "controls";
-    controls.append(resistorButton, wireButton, exportButton);
+    controls.append(resistorButton, wireButton, undoButton, redoButton, exportButton);
 
     el.appendChild(controls);
     el.appendChild(canvas);
