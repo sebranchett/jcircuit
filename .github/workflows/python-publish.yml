@@ -84,7 +84,7 @@ jobs:
     permissions:
       id-token: write
     environment:
-      name: testpypi
+      name: pypi
       url: https://test.pypi.org/p/jcircuit
 
     steps:
