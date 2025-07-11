@@ -37,7 +37,7 @@ tag=$version_prefix$(grep version pyproject.toml | awk -F'"' '$0=$2')
 echo "Intended repository: $repository"
 echo command: git tag $tag
 echo command: git push origin $tag
-# veryfy that the user wishes to proceed
+# verify that the user wishes to proceed
 read -p "Do you want to proceed with pushing the tag? (y/n) "
 if [[ "$REPLY" =~ ^[Yy]$ ]]; then
     git tag $tag
