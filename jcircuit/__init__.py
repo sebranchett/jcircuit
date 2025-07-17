@@ -14,10 +14,9 @@ except importlib.metadata.PackageNotFoundError:
 class JCircuitWidget(anywidget.AnyWidget):
 
     _esm = pathlib.Path(__file__).parent / "static" / "widget.js"
-    # _css = pathlib.Path(__file__).parent / "static" / "gui.css"
-    _css = """
-    .controls button { margin-top: 10px; }
-    """
+    # _css = """
+    # .controls button { margin-top: 10px; }
+    # """
     circuitElements = traitlets.List().tag(sync=True)
     exportTrigger = traitlets.Int(0).tag(sync=True)
 

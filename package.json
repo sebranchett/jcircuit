@@ -6,7 +6,7 @@
 		"build": "npm run bundle && npm run copy"
 	},
 	"dependencies": {
-		"gui-circuit-generator": "github:sebranchett/gui-circuit-generator#develop"
+		"gui-circuit-generator": "github:sebranchett/gui-circuit-generator#common_gui"
 	},
 	"devDependencies": {
 		"esbuild": "^0.25.4"
