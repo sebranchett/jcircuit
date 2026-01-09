@@ -3,8 +3,9 @@
 		"dev": "npm run build -- --sourcemap=inline --watch",
 		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=jcircuit/static --asset-names=assets/[name] --loader:.png=dataurl --loader:.jpg=dataurl",
 		"copy": "cp -r node_modules/gui-circuit-generator/assets jcircuit/static/assets && cp src/widget.html jcircuit/static/widget.html",
-        "menu:build": "node node_modules/gui-circuit-generator/scripts/build-menu-config.mjs",
-        "build": "npm run menu:build && npm run bundle && npm run copy && npm run menu:build"
+        "menu:build": "cd node_modules/gui-circuit-generator/ && node scripts/build-menu-config.mjs && cd ../..",
+		"menu:copy": "cp -r node_modules/gui-circuit-generator/dist/static jcircuit/static/",
+        "build": "npm run menu:build && npm run bundle && npm run copy && npm run menu:build && npm run menu:copy"
 	},
 	"dependencies": {
 		"gui-circuit-generator": "github:sebranchett/gui-circuit-generator#common_gui_again"
