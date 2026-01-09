@@ -1,14 +1,16 @@
 {
 	"scripts": {
 		"dev": "npm run build -- --sourcemap=inline --watch",
-		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=jcircuit/static --asset-names=assets/[name] --loader:.png=dataurl",
-		"copy": "cp -r node_modules/gui-circuit-generator/assets jcircuit/static/assets",
-		"build": "npm run bundle && npm run copy"
+		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=jcircuit/static --asset-names=assets/[name] --loader:.png=dataurl --loader:.jpg=dataurl",
+		"copy": "cp -r node_modules/gui-circuit-generator/assets jcircuit/static/assets && cp src/widget.html jcircuit/static/widget.html",
+        "menu:build": "node node_modules/gui-circuit-generator/scripts/build-menu-config.mjs",
+        "build": "npm run menu:build && npm run bundle && npm run copy && npm run menu:build"
 	},
 	"dependencies": {
-		"gui-circuit-generator": "github:sebranchett/gui-circuit-generator#common_gui"
+		"gui-circuit-generator": "github:sebranchett/gui-circuit-generator#common_gui_again"
 	},
 	"devDependencies": {
-		"esbuild": "^0.25.4"
+		"esbuild": "^0.25.4",
+		"yaml": "^2.8.1"
 	}
 }
