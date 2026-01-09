@@ -14,6 +14,8 @@ async function render({ model, el }) {
 
     // Initialize the circuit application
     await initializeCircuitApp(stage, canvas, controls);
+
+    model.set("exportTrigger", 0);
 }
 
 export default { render };

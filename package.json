@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"dev": "npm run build -- --sourcemap=inline --watch",
-		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=jcircuit/static --asset-names=assets/[name] --loader:.png=dataurl --loader:.jpg=dataurl",
+		"bundle": "esbuild src/widget.js --minify --format=esm --bundle --outdir=jcircuit/static --asset-names=assets/[name] --loader:.png=dataurl --loader:.jpg=dataurl --loader:.json=dataurl",
 		"copy": "cp -r node_modules/gui-circuit-generator/assets jcircuit/static/assets && cp src/widget.html jcircuit/static/widget.html",
         "menu:build": "cd node_modules/gui-circuit-generator/ && node scripts/build-menu-config.mjs && cd ../..",
 		"menu:copy": "cp -r node_modules/gui-circuit-generator/dist/static jcircuit/static/",
